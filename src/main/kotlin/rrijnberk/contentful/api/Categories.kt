@@ -13,7 +13,7 @@ import rrijnberk.contentful.constants.Core
 class Categories {
     @Get("/")
     fun index(): String {
-        return Core.cdaClient.fetch(CDAContentType::class.java).all().items().map({ category -> toJSON(category) }).toString()
+        return Core.cdaClient.fetch(CDAContentType::class.java).all().items().map({ toJSON(it) }).toString()
     }
 
     private fun toJSON(category: CDAResource): JSONObject {

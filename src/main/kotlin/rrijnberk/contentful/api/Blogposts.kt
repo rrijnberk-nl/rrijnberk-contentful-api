@@ -19,7 +19,7 @@ class Blogposts {
                 .withContentType("blogpost")
                 .all()
                 .items()
-                .map({ category -> toJSON(category) })
+                .map({ toJSON(it) })
                 .toString()
     }
 
